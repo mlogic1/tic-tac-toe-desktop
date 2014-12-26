@@ -142,6 +142,7 @@ namespace Tic_Tac_Toe
                 {
                     p.Tag = "Y";
                 }
+                
                 //Check for victory on each successful symbol add and play sound
                 PlayClickSound();
                 CheckForVictory();
@@ -174,10 +175,11 @@ namespace Tic_Tac_Toe
         private void CheckForVictory()
         {
 
-            //tie check
+            //tie check - it does nothing for now, TODO later
             if (IsZoneTaken[0] == true && IsZoneTaken[1] == true && IsZoneTaken[2] == true && IsZoneTaken[3] == true && IsZoneTaken[4] == true && IsZoneTaken[5] == true && IsZoneTaken[6] == true && IsZoneTaken[7] == true && IsZoneTaken[8] == true)
             {
-                result.Visible = true; // ne radi
+                result.Visible = true; // doesn't work
+                result.Text = "It's a Tie! Click Game->Restart to go again."; //doesn't work
             }
 
 
@@ -186,8 +188,7 @@ namespace Tic_Tac_Toe
             {
                 if (Zones[1].Tag == Zones[2].Tag)
                 {
-                    result.Visible = true;
-                    PlayVictorySound();
+                    EndGame();
                 }
             }
 
@@ -195,8 +196,7 @@ namespace Tic_Tac_Toe
             {
                 if (Zones[4].Tag == Zones[5].Tag)
                 {
-                    result.Visible = true;
-                    PlayVictorySound();
+                    EndGame();
                 }
             }
 
@@ -204,18 +204,44 @@ namespace Tic_Tac_Toe
             {
                 if (Zones[7].Tag == Zones[8].Tag)
                 {
-                    result.Visible = true;
-                    PlayVictorySound();
+                    EndGame();
                 }
             }
+
+
+            //vertical check
+            if (Zones[0].Tag == Zones[3].Tag && Zones[3].Tag != null)
+            {
+                if (Zones[3].Tag == Zones[6].Tag)
+                {
+                    EndGame();
+                }
+            }
+
+            if (Zones[1].Tag == Zones[4].Tag && Zones[4].Tag != null)
+            {
+                if (Zones[4].Tag == Zones[7].Tag)
+                {
+                    EndGame();
+                }
+            }
+
+            if (Zones[2].Tag == Zones[5].Tag && Zones[5].Tag != null)
+            {
+                if (Zones[5].Tag == Zones[8].Tag)
+                {
+                    EndGame();
+                }
+            }
+
+            
 
             //diagonal check
             if (Zones[0].Tag == Zones[4].Tag && Zones[4].Tag != null)
             {
                 if (Zones[4].Tag == Zones[8].Tag)
                 {
-                    result.Visible = true;
-                    PlayVictorySound();
+                    EndGame();
                 }
             }
 
@@ -223,8 +249,7 @@ namespace Tic_Tac_Toe
             {
                 if (Zones[4].Tag == Zones[2].Tag)
                 {
-                    result.Visible = true;
-                    PlayVictorySound();
+                    EndGame();
                 }
             }
 
@@ -241,7 +266,20 @@ namespace Tic_Tac_Toe
             System.Media.SoundPlayer player = new System.Media.SoundPlayer(Tic_Tac_Toe.Properties.Resources.click);
             player.Play();
         }
-        
+
+        private void EndGame()
+        {
+            if (CurrentTurn.GetPixel(62, 62) == Tic_Tac_Toe.Properties.Resources.X.GetPixel(62, 62))
+            {
+                result.Text = "X Wins! Click Game->Restart to go again.";
+            }
+            else
+            {
+                result.Text = "O Wins! Click Game->Restart to go again.";
+            }
+            result.Visible = true;
+            PlayVictorySound();
+        }
         
     }
 }
