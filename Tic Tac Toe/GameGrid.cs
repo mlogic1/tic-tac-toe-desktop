@@ -181,60 +181,31 @@ namespace Tic_Tac_Toe
                 result.Visible = true; // doesn't work
                 result.Text = "It's a Tie! Click Game->Restart to go again."; //doesn't work
             }
-
-
-            //linear check
-            if (Zones[0].Tag == Zones[1].Tag && Zones[1].Tag != null)
+            //horizontal check
+            for(int i = 0; i < 9; i+=3)
             {
-                if (Zones[1].Tag == Zones[2].Tag)
+                if(Zones[i].Tag != null)
                 {
-                    EndGame();
+                    if(Zones[i].Tag == Zones[i + 1].Tag  && Zones[i + 1].Tag== Zones[i + 2].Tag ) 
+                    {
+                        EndGame();
+                    }
+
                 }
             }
-
-            if (Zones[3].Tag == Zones[4].Tag && Zones[4].Tag != null)
-            {
-                if (Zones[4].Tag == Zones[5].Tag)
-                {
-                    EndGame();
-                }
-            }
-
-            if (Zones[6].Tag == Zones[7].Tag && Zones[7].Tag != null)
-            {
-                if (Zones[7].Tag == Zones[8].Tag)
-                {
-                    EndGame();
-                }
-            }
-
-
             //vertical check
-            if (Zones[0].Tag == Zones[3].Tag && Zones[3].Tag != null)
+            for (int i = 0; i < 3; i ++)
             {
-                if (Zones[3].Tag == Zones[6].Tag)
+                if (Zones[i].Tag != null)
                 {
-                    EndGame();
+                    if (Zones[i].Tag == Zones[i + 3].Tag && Zones[i + 3].Tag == Zones[i + 6].Tag)
+                    {
+                        EndGame();
+                    }
+
                 }
             }
 
-            if (Zones[1].Tag == Zones[4].Tag && Zones[4].Tag != null)
-            {
-                if (Zones[4].Tag == Zones[7].Tag)
-                {
-                    EndGame();
-                }
-            }
-
-            if (Zones[2].Tag == Zones[5].Tag && Zones[5].Tag != null)
-            {
-                if (Zones[5].Tag == Zones[8].Tag)
-                {
-                    EndGame();
-                }
-            }
-
-            
 
             //diagonal check
             if (Zones[0].Tag == Zones[4].Tag && Zones[4].Tag != null)
