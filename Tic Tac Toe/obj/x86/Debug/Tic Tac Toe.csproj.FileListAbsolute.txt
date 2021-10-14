@@ -1,9 +1,0 @@
-D:\Programming\C# Projects\Tic Tac Toe\Tic Tac Toe\bin\Debug\Tic Tac Toe.exe.config
-D:\Programming\C# Projects\Tic Tac Toe\Tic Tac Toe\bin\Debug\Tic Tac Toe.exe
-D:\Programming\C# Projects\Tic Tac Toe\Tic Tac Toe\bin\Debug\Tic Tac Toe.pdb
-D:\Programming\C# Projects\Tic Tac Toe\Tic Tac Toe\obj\x86\Debug\Tic_Tac_Toe.Properties.Resources.resources
-D:\Programming\C# Projects\Tic Tac Toe\Tic Tac Toe\obj\x86\Debug\Tic Tac Toe.csproj.GenerateResource.Cache
-D:\Programming\C# Projects\Tic Tac Toe\Tic Tac Toe\obj\x86\Debug\Tic Tac Toe.exe
-D:\Programming\C# Projects\Tic Tac Toe\Tic Tac Toe\obj\x86\Debug\Tic Tac Toe.pdb
-D:\Programming\C# Projects\Tic Tac Toe\Tic Tac Toe\obj\x86\Debug\Tic_Tac_Toe.Form1.resources
-D:\Programming\C# Projects\Tic Tac Toe\Tic Tac Toe\obj\x86\Debug\Tic Tac Toe.csprojResolveAssemblyReference.cache
